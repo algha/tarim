@@ -54,4 +54,11 @@ the database is provided at folder: **tarim/docker/db/sql/**
  and use python environment.  
  reference this official tutorial: [https://flask.palletsprojects.com/en/1.1.x/installation/](https://flask.palletsprojects.com/en/1.1.x/installation/)  
  
+### Some Screenshoots
+| ![ScreenShot](https://raw.github.com/algha/tarim/master/screens/login.png) | ![ScreenShot](https://raw.github.com/algha/tarim/master/screens/login.png) |
+|--|--|
+| ![ScreenShot](https://raw.github.com/algha/tarim/master/screens/login.png) | ![ScreenShot](https://raw.github.com/algha/tarim/master/screens/login.png) |
+
+
+  
  
