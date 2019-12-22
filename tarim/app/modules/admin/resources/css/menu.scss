@@ -1,0 +1,57 @@
+// Menu
+.sidebar-menu{
+  background-color: #3C4146;
+  min-width: 300px;
+
+  .divider{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #4a4a4a;
+    border-top: 1px solid #2a2a2a;
+    margin: 1rem 0;
+  }
+
+  .menu{
+    .menu-list a{
+      padding-right: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      span.icon{
+        margin-right: 0.75rem;
+      }
+    }
+    .menu-list li.is-active{
+      background-color: $dark !important;
+      border-left: 2px solid $info;
+      ul{
+        display: block !important;
+      }
+      a.is-active:after{
+        @include triangle-left(5px, $white-bis);
+        position: absolute;
+        right: 0;
+      }
+    }
+    .menu-list li.has-children{
+      position: relative;
+    }
+    .menu-list li.has-children .block{
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      width: 50px;
+      height: 36px;
+    }
+    .menu-list li.has-children a.is-toggle:after{
+      @include triangle-left(5px, $white-bis);
+      position: absolute;
+      right: 1rem;
+    }
+    .menu-list li.is-active a.is-toggle:after{
+      @include triangle-bottom(5px, $white-bis);
+    }
+  }
+}

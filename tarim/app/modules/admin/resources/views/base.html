@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-controller="layouts--html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}} - {{description}}</title>
+    <meta name="robots" content="index, follow">
+    {{asset.showStyle('admin')|safe}}
+    {{asset.showJavascript('admin')|safe}}
+    <script type="text/javascript">
+    document.addEventListener("turbolinks:before-render", function(event) {
+      FontAwesome.dom.i2svg({
+        node: event.data.newBody
+      });
+    });
+    </script>
+
+</head>
+<body>
+<div>
+  <div class="columns is-marginless">
+      {% include "sidebar/main.html" %}
+      {% block content %}{% endblock %}
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<a
+    data-action="screen--screen#targetModal"
+    data-modal-title="{{ title }}"
+    data-modal-key="{{ modal }}"
+    data-modal-load="{{asyncLoadMethod}}"
+    data-modal-action="{{request.url}}{{asyncActionMethod}}"
+    data-modal-params="{{asyncParams}}">
+    {% if icon %}
+      <span class="icon is-small">
+        <i class="{{iconfont}} {{icon}}" aria-hidden="true"></i>
+      </span>
+    {% endif %}
+    {{ title }}
+</a>

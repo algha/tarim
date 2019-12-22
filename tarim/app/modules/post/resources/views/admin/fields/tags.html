@@ -1,0 +1,14 @@
+<div class="field" >
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    <div class="select is-fullwidth"
+         data-controller="fields--tags"
+         {{field.renderDataAttr()|safe}}>
+      <select class="is-fullwidth" {{field.renderAttr()|safe}} >
+        {% for value in field.getValue() %}
+          <option value="{{value}}" selected >{{value}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</div>

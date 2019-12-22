@@ -1,0 +1,9 @@
+<div class="field" >
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    <input class="input"
+           data-controller="fields--input"
+           {{field.renderDataAttr()|safe}}
+           {{field.renderAttr()|safe}} />
+  </div>
+</div>

@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+$radius-small: 0;
+$radius: 0;
+$radius-large: 0;
+
+@import "~bulma/sass/utilities/_all";
+@import "~flatpickr/dist/flatpickr.min";
+@import "~select2/dist/css/select2.min";
+@import "~filepond/dist/filepond.min";
+@import "~filepond-plugin-image-preview/dist/filepond-plugin-image-preview";
+@import "plugins/tinymce";
+
+
+$input-shadow: none;
+
+//menu
+$menu-item-color : $grey-lighter;
+$menu-item-active-background-color : transparent;
+$menu-item-hover-background-color : transparent;
+$menu-item-hover-color : $info;
+$menu-item-active-color : $info;
+
+@import "~bulma/bulma";
+@import "~bulma-utilities/sass/bulma-utilities";
+@import "utilities";
+@import "menu";
+
+
+.tabs-content li.tab-content-item{
+  display: none;
+  list-style: none;
+}
+
+.tabs-content li.is-active{
+  display: block;
+}
+
+.select2-selection{
+  border-radius: 0 !important;
+}
+
+.select2-dropdown{
+  border-radius: 0 !important;
+}
+
+.select2-selection__choice{
+  border-radius: 0 !important;
+}
+.select2-results__options{
+  .select2-results__option{
+    span.is-pulled-right{
+      display: block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 0.75em;
+    }
+  }
+}
+
+// file selector
+.file-selector{
+  border: 1px solid $grey-lighter;
+  .select-area{
+    justify-content: center;
+    padding: 1.5em;
+    cursor: pointer;
+  }
+}
+
+.link{
+  font-size: 1rem;
+}
+
+.link-label{
+  color: #7a7a7a;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.link-label:not(:last-child){
+    margin-bottom: 1em;
+}
+
+.link-list{
+  line-height: 1.25;
+  li{
+    display: flex;
+    &.is-active{
+            background: $grey-lighter;
+    }
+  }
+  a{
+    flex-grow: 1;
+    border-radius: 0;
+    color: $grey-darker;
+    display: inline-grid;
+    padding: 0.5em 0.75em;
+  }
+  span.link-info{
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    padding-right: 1rem;
+    .link-info-text{
+      font-size: 0.75em;
+    }
+    .link-info-badge{
+      color: $white;
+      border-radius: 50%;
+      margin-left: 0.5rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      font-size: 0.75em;
+      line-height: 1.25rem;
+      text-align: center;
+    }
+  }
+}
+
+/***content line height centerilize***/
+.line-center{
+  display: flex;
+  align-items: center;
+}
+.b{
+  border: 1px solid $grey-lighter;
+}
+
+.codeflask code, .codeflask pre{
+  background: none;
+}
+
+.flash-message{
+  position: relative;
+  .delete{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

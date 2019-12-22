@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="column" data-controller="screen--screen">
+      {% include "main-head.html" %}
+      {% include "partials/breadcrumb.html" %}
+
+      <div class="columns is-mobile is-multiline">
+        {% for menu in Menu.getItemsInPlace('toolbox') %}
+        <div class="column is-one-quarter-fullhd is-two-thirds-tablet is-half-desktop is-one-third-widescreen">
+          <div class="card">
+              <header class="card-header">
+
+                 <p class="card-header-title">
+                   <span class="icon">
+                     <i class="{{menu.iconfont}} {{menu.icon}}" aria-hidden="true"></i>
+                   </span>
+                   {{menu.title}}
+                 </p>
+               </header>
+              <div class="content">
+                  <ul class="is-marginless has-padding-7">
+                  {% for child in  menu.children%}
+                    <li class="line-center">
+                      <span class="icon">
+                        <i class="{{child.iconfont}} {{child.icon}}" aria-hidden="true"></i>
+                      </span>
+                      <a href="{{child.url()}}">{{child.title}}</a>
+                    </li>
+                  {% endfor %}
+                  </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+</div>
+{% endblock %}

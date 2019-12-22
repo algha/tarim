@@ -1,0 +1,40 @@
+<div>
+  <div class="columns is-marginless is-vcentered">
+      <div class="column is-paddingless">
+        {{info}}
+      </div>
+      <div class="column is-paddingless is-narrow">
+        {% for button in buttons %}
+          {{button.build()|safe}}
+        {% endfor %}
+      </div>
+  </div>
+
+  <table class="table {{_class}}" data-controller="layouts--table" {{attributes|safe}}>
+    <thead>
+      <tr>
+        {% for th in fields %}
+          <th width='{{th.width}}' class='has-text-{{th.align}}'>
+            {{ th.title }}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in data %}
+      <tr data-id="{{item.id}}">
+        {% for th in fields %}
+        <td width='{{th.width}}' class='has-text-{{th.align}}'>
+          {% if not th.render %}
+            {{ th.getValue(item) }}
+          {% else %}
+            {{ th.handle(item)|safe }}
+          {% endif %}
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

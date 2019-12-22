@@ -1,0 +1,47 @@
+{
+  "name": "algha",
+  "version": "1.0.0",
+  "description": "The admin platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bulma": "^0.7.2",
+    "bulma-utilities": "^0.3.6",
+    "codeflask": "^1.4.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "filepond": "^4.7.1",
+    "filepond-plugin-image-preview": "^4.4.0",
+    "flatpickr": "^4.6.2",
+    "jquery": "^3.4.1",
+    "laravel-mix": "^5.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.12.0",
+    "select2": "^4.0.10",
+    "sortablejs": "^1.10.1",
+    "stimulus": "^1.1.1",
+    "stimulus-flatpickr": "^1.1.2",
+    "tinymce": "^5.0.15",
+    "turbolinks": "^5.2.0"
+  },
+  "devDependencies": {
+    "@vizuaalog/bulmajs": "^0.10.0",
+    "css-loader": "^2.1.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

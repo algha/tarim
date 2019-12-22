@@ -1,0 +1,27 @@
+{% macro Icon(item) -%}
+  {% if item.icon %}
+  <span class="icon is-small"><i class="{{item.iconfont}} {{item.icon}}" aria-hidden="true"></i></span>
+  {% endif %}
+{% endmacro %}
+
+{% if menu.head is not none %}
+<li class="menu-label has-padding-l-7">
+  {{ menu.head }}
+</li>
+{% endif %}
+<li {{ menu.dataAction()|safe }} class="{{ menu.liClass() }}">
+  <a href="{{ menu.url() }}"  class="{{ menu.linkClass() }}">
+    {{Icon(menu)}}  {{ menu.title }}
+  </a>
+  {% if menu.hasChildren() %}
+      <span class="block is-marginless" role="button"></span>
+      <ul class="is-paddingless is-marginless is-borderless is-hidden">
+        {% for menu in menu.children %}
+          {{menu.build()|safe}}
+        {% endfor %}
+      </ul>
+  {% endif %}
+</li>
+{% if menu.diverder %}
+  <li class="divider"></li>
+{% endif %}

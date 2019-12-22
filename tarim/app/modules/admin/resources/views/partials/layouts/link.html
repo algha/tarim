@@ -1,0 +1,61 @@
+{% macro Icon(item) -%}
+  {% if item.icon %}
+  <span class="icon is-small">
+    <i class="{{item.iconfont}} {{item.icon}}" aria-hidden="true"></i>
+  </span>
+  {% endif %}
+{% endmacro %}
+
+{% if link.children %}
+  <div class="dropdown is-right" data-controller="components--dropdown">
+    <div class="dropdown-trigger" data-action="click->components--dropdown#handleTriggerClick">
+        <button type="button" class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+          {{ Icon(link) }}
+          <span>{{ link.title }}</span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+        <div class="dropdown-content">
+          {% for child in link.children %}
+            {{ child.build()|safe }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% elif link.modal %}
+  <button type="button"
+          data-action="screen--screen#targetModal"
+          class="{{ link.getClass() }}"
+          data-modal-title="{{ link.title }}"
+          data-modal-key="{{ link.modal }}"
+          data-modal-load="{{link.asyncLoadMethod}}"
+          data-modal-action="{{link.getAsyncActionMethod(request)}}"
+          data-modal-params="{{link.asyncParams}}">
+          {{ Icon(link) }}{{ link.title }}
+  </button>
+{% elif link.method  %}
+  <button type="submit" form="post-form" formaction="{{ request.url  }}/{{link.method}}" class="{{ link.getClass() }}">
+    {{ Icon(link) }}
+    {{ link.title }}
+  </button>
+{% elif link.text %}
+  <p class="{{ link.getClass() }}">
+    {{ Icon(link) }}
+    {{link.text}}
+  </p>
+{% elif link.ajaxMethod %}
+<span role="button"
+      data-action="click->components--dropdown#handleAjaxClick"
+      data-confirm="{{link.confirm}}"
+      data-url="{{link.link}}"
+      data-method="{{link.ajaxMethod}}"
+      class="{{ link.getClass() }}">
+  {{ Icon(link) }}
+  {{ link.title }}
+</span>
+{% else %}
+<a href="{{ link.link }}" class="{{ link.getClass() }}">
+  {{ Icon(link) }}
+  {{ link.title }}
+</a>
+{% endif %}

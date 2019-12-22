@@ -1,0 +1,43 @@
+// triangle
+%object{
+  content: "";
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+
+
+// direction left
+@mixin triangle-left($size, $color){
+  @extend %object;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-right: $size solid $color;
+}
+
+
+// direction right
+@mixin triangle-right($size, $color){
+  @extend %object;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+}
+
+
+// direction top
+@mixin triangle-top($size, $color){
+  @extend %object;
+  border-right: $size solid transparent;
+  border-left: $size solid transparent;
+  border-bottom: $size solid $color;
+}
+
+
+// direction bottom
+@mixin triangle-bottom($size, $color){
+  @extend %object;
+  border-right: $size solid transparent;
+  border-left: $size solid transparent;
+  border-top: $size solid $color;
+}

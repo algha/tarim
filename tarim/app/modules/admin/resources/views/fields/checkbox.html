@@ -1,0 +1,11 @@
+<div class="field">
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    {% for key, value in field.values.items() %}
+    <label class="checkbox has-margin-r-4">
+      <input type="checkbox" name="{{field.getName()}}" {{field.isChecked(key)}} value="{{ key }}">
+      {{ value }}
+    </label>
+    {% endfor %}
+  </div>
+</div>

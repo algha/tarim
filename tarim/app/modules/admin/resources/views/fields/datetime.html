@@ -1,0 +1,9 @@
+<div class="field">
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    <input data-controller="fields--datetime"
+           class="input flatpickr-input"
+           {{field.renderDataAttr()|safe}}
+           {{field.renderAttr()|safe}} />
+  </div>
+</div>

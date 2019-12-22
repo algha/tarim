@@ -1,0 +1,11 @@
+<div class="columns">
+<div class="column has-background-white-bis">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      {% for item in breadcrumbs %}
+      <li class="{{ item.isActive() }}"><a href='{{ item.getLink() }}'>{{ item.getTitle() }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+</div>

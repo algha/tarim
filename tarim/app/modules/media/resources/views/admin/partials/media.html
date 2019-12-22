@@ -1,0 +1,42 @@
+<div
+  class="columns has-background-white is-marginless"
+  data-controller="layouts--media"
+  data-url="{{url_for('admin.media.upload')}}"
+  data-target-name="{{name}}">
+  <div class="column">
+    <div class="tabs is-boxed">
+      <ul>
+        <!-- <li class="tab-item ">
+          <a>
+            <span class="icon is-small"><i class="fas fa-folder" aria-hidden="true"></i></span>
+            <span>Files</span>
+          </a>
+        </li> -->
+        <li class="tab-item is-active">
+          <a>
+            <span class="icon is-small"><i class="fas fa-file-upload" aria-hidden="true"></i></span>
+            <span>Upload</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tabs-content">
+        <ul>
+            <!-- <li class="tab-content-item ">
+              content
+            </li> -->
+            <li class="tab-content-item is-active">
+              <div class="is-boxed is-fullwidth">
+                <input type="file"
+                  style="display: none"
+                  id="filepond"
+                  class="filepond"
+                  name="files"
+                  multiple />
+              </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>

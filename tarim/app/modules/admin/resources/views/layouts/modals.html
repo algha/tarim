@@ -1,0 +1,45 @@
+<!--
+data-screen--modal-async="{{templateAsync}}"
+data-screen--modal-method="{{templateAsyncMethod}}" -->
+{% push 'modal-container' %}
+    {% for form in forms %}
+      <div class="modal"
+           id="screen-modal-{{modal}}"
+           data-controller="screen--modal"
+           data-screen--modal-url="{{request.url}}"
+           data-screen--modal-slug="{{templateSlug}}">
+
+        <div class="modal-background"></div>
+          <form id="modal-form-{{asyncMethod}}" method="post" enctype="multipart/form-data">
+        <div class="modal-card" id="modal-card">
+
+              <header class="modal-card-head">
+                    <p class="modal-card-title"></p>
+                    <button type="button"
+                            class="delete"
+                            aria-label="close"
+                            data-action="screen--modal#close">
+                    </button>
+                </header>
+                <section class="modal-card-body">
+                    <div data-async >
+                        {{ layout.buildOrPrint(form)|safe }}
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success">Save changes</button>
+                    {% for button in asyncButtons %}
+                      <button class="button is-success">Save changes</button>
+                    {% endfor %}
+                    <button type="button"
+                            class="button is-danger is-outline"
+                            data-action="screen--modal#close">
+                            Cancel
+                    </button>
+                </footer>
+
+        </div>
+</form>
+    </div>
+  {% endfor %}
+{% endpush %}

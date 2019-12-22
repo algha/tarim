@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    {{asset.css('/dashboard/assets/css/auth.css')|safe}}
+    {{asset.javascript('/dashboard/assets/js/auth.js')|safe}}
+</head>
+<body>
+  <section class="hero is-fullheight is-medium" style="background-color:#F6F8FA;">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-centered">
+               <div class="column" style="max-width: 25rem;">
+                  <article class="card">
+                    <div class="card-content has-padding-4">
+
+                      <div class="text-center mb-4">
+                          <a href="/dashboard">
+                            <p class="has-text-dark">
+                              <span class="is-size-2">Tarim<small style="vertical-align: top;opacity: .75;" class="is-size-6">uyghur</small>
+                              </span>
+                            </p>
+                          </a>
+                      </div>
+
+                      <p class="has-margin-bt-4">Sign in to your account</p>
+                      <form method="post">
+                        <div class="field">
+                          <label class="label">Email Address</label>
+                          <input class="input" type="email" name="email" placeholder="Enter your email">
+                        </div>
+
+                        <div class="field">
+                           <label class="label">Password <a class="is-pulled-right" href="#">Forgot your password?</a></label>
+                          <input class="input" type="password" name="password" placeholder="Etner your password">
+                        </div>
+
+                        <div class="level">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            Remember me
+                          </label>
+                          <button class="button is-pulled-right">
+                            <i class="fa fa-user"></i>
+                            Login
+                          </button>
+                        </div>
+
+                        {% if error %}
+                          <p class="has-text-danger"><strong>Error:</strong> {{ error }}</p>
+                        {% endif %}
+                      </form>
+
+                    </div>
+                  </article>
+                </div>
+            </div>
+          </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="field">
+  <label class="label">{{ field.label }}</label>
+  <div class="control" data-controller="fields--upload" {{field.renderDataAttr()|safe}}>
+    <div class="is-boxed is-fullwidth file-selector" id="upload-zone">
+      <div class="select-area line-center">
+        <span class="icon">
+          <i class="fas fa-cloud-upload-alt"></i>
+        </span>
+      </div>
+    </div>
+    <div class="columns is-marginless-t is-multiline files" id="files">
+      {% for file in field.getValue() %}
+      <div class="column is-half" data-id="{{file.id}}">
+        {% if file.file_type == 'photo'%}
+        <img class="image" src="{{file.url}}" />
+        {%else%}
+        <img class="image" src="/storage/files/file.png" />
+        {%endif%}
+        <input type="hidden" name="{{field.getName()}}" value="{{file.id}}">
+
+        <div class="info">
+          <div>
+            <span class="info-item remove" data-id="{{file.id}}" data-action="click->fields--upload#remove"> <i class="fas fa-trash-alt"></i> </span>
+            <a class="info-item link" href="{{file.url}}" target="_blank"><i class="fas fa-link"></i></a>
+            <p class="name">{{file.original_name}}</p>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

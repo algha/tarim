@@ -1,0 +1,11 @@
+<div class="field" >
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+      <div id="editor" data-controller="fields--tinymce" {{field.renderDataAttr()|safe}}>
+        <div class="tinymce" id="tinymce-wrapper-selector" >
+            {{ field.getValue()|safe }}
+        </div>
+        <input class="input" {{field.renderAttr()|safe}} value="{{field.getValue()}}">
+      </div>
+  </div>
+</div>

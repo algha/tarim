@@ -1,0 +1,8 @@
+<div class="field">
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    <textarea class="textarea"
+      {{field.renderAttr()|safe}}
+      {{field.renderDataAttr()|safe}}>{{field.getValue()}}</textarea>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="column is-narrow is-full-mobile hero is-fullheight is-paddingless sidebar-menu"
+     data-controller="layouts--menu"
+     data-turbolinks-permanent>
+
+    <aside class="menu is-hidden-mobile">
+
+      <div class="text-center has-padding-6 has-text-white-ter">
+            <p class="has-text-centered">
+              <span class="is-size-2">Tarim<small style="vertical-align: top;opacity: .75;" class="is-size-6">uyghur</small>
+              </span>
+            </p>
+            <p class="has-text-centered">Powered By Tarim. v0.1</p>
+        </div>
+
+        <div class="user">
+          <div class="divider is-marginless"></div>
+            <div class="columns is-vcentered is-marginless is-paddingless">
+              <div class="column is-narrow">
+                <figure class="image is-48x48">
+                  <img class="is-rounded" src="https://bulma.io/images/placeholders/48x48.png">
+                </figure>
+              </div>
+              <div class="column is-paddingless-l">
+                  <p class="has-text-white-ter">Tarim</p>
+                  <p class="has-text-grey-lighter is-size-7">Administrator</p>
+              </div>
+              <div class="column is-narrow">
+                <span class="has-text-white-ter"></span>
+              </div>
+            </div>
+        </div>
+        <div class="divider is-marginless-t"></div>
+        <ul class="menu-list is-unselectable">
+            {% for menu in Menu.getItemsInPlace('menu') %}
+              {{menu.build()|safe}}
+            {% endfor %}
+        </ul>
+    </aside>
+</div>

@@ -1,0 +1,12 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+   {% if messages %}
+     {% for category, message in messages %}
+      <article class="message flash-message is-{{category}}">
+        <div class="message-body">
+          {{message|safe}}
+        <button class="delete" aria-label="delete"></button>
+        </div>
+      </article>
+      {% endfor %}
+  {% endif %}
+{% endwith %}

@@ -1,0 +1,15 @@
+<div class="field" >
+  <label class="label">{{ field.label }}</label>
+  <div class="control">
+    <div class="select is-fullwidth"
+         data-controller="fields--select"
+         {{field.renderDataAttr()|safe}}>
+      <select class="is-fullwidth"
+              {{field.renderAttr()|safe}}>
+        {% for key, value in field.options.items() %}
+          <option value="{{key}}" {{ field.isSelected(key) }}>{{value}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+</div>

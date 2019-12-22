@@ -1,0 +1,35 @@
+{% macro Link(links) -%}
+  {% for link in links %}
+    {% if link.children is none %}
+      {{ LinkItem(link, "button") }}
+    {% else %}
+      <div class="dropdown is-right" data-controller="components--dropdown">
+        <div class="dropdown-trigger" data-action="click->components--dropdown#handleTriggerClick">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+              <span>{{ link.title }}</span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+            <div class="dropdown-content">
+              {% for child in link.children %}
+                {{ LinkItem(child, "dropdown-item") }}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro LinkItem(link, itemClass="") %}
+  {% if link.method is not none %}
+  <button type="submit" form="post-form" formaction="{{ request.url  }}/{{link.method}}" class="{{ itemClass }}">
+    {{ link.title }}
+  </button>
+  {% else %}
+  <a href="{{ link.link }}" class="{{ itemClass }}">
+    {{ link.title }}
+  </a>
+  {% endif %}
+{% endmacro %}

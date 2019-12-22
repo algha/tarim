@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  tarim:
+    container_name: tarim
+    build: ./tarim
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./tarim:/usr/src/app"
+    tty: true
+    environment:
+      TZ: Asia/Tokyo
+    links:
+    - db:db
+
+  db:
+      image: mysql:8.0
+      ports:
+          - "3306:3306"
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+          MYSQL_DATABASE: tarim
+          MYSQL_USER: Tarim
+          MYSQL_PASSWORD: Tarim123
+          MYSQL_ROOT_PASSWORD: Tarim123
+          TZ: 'Asia/Tokyo'
+      volumes:
+          - ./docker/db/data:/var/lib/mysql
+          - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+          - ./docker/db/sql:/docker-entrypoint-initdb.d
+      networks:
+          - default
+
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      links:
+          - db:db
+      ports:
+          - 8000:80
+      environment:
+          MYSQL_USER: Tarim
+          MYSQL_PASSWORD: Tarim123
+          MYSQL_ROOT_PASSWORD: Tarim123

@@ -1,0 +1,25 @@
+<div class="tab">
+  <div class="tabs is-boxed">
+    <ul>
+      {% for form in forms %}
+        {% set rowloop = loop %}
+          <li class="{% if rowloop.first %}is-active{% endif %}">
+            <a>
+              <span>{{ form.name }}</span>
+            </a>
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="tabs-content">
+        <ul>
+          {% for form in forms %}
+            {% set rowloop = loop %}
+            <li class="{% if rowloop.first %}is-active{% endif %}">
+              {{layout.buildOrPrint(form)|safe}}
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>

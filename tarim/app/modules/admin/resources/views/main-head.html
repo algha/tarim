@@ -1,0 +1,12 @@
+<div class="columns is-vcentered">
+  <div class="column">
+    <h1 class="title is-4">{{ screen.name }}</h1>
+    <h2 class="subtitle is-6">{{ screen.description  }}</h2>
+  </div>
+  <div class="column is-narrow">
+    {% for command in screen.CommandBar() %}
+      {{command.build()|safe}}
+    {% endfor %}
+
+  </div>
+</div>

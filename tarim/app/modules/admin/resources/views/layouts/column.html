@@ -1,0 +1,7 @@
+<div class="columns">
+  {% for form in forms %}
+  <div class="column {{form.getClassList()}}">
+    {{layout.buildOrPrint(form)|safe}}
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,31 @@
+<aside class="link">
+  {% if name%}
+  <p class="link-label">
+    {{name}}
+  </p>
+  {% endif %}
+  <ul class="link-list">
+    {% for item in items%}
+    <li class="{{item.isActive()}}">
+      <a href="{{item.getLink()}}" class="href="{{item.isActive()}}"">
+        {{item.getTitle()}}
+      </a>
+      <span class="link-info">
+
+        {% if item.getInfo() %}
+        <span class="link-info-text">
+          {{item.getInfo()}}
+        </span>
+        {% endif %}
+
+        {% if item.getBadge() %}
+        <font class="link-info-badge has-background-info">
+          {{item.getBadge()}}
+        </font>
+        {% endif %}
+
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+</aside>

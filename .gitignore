@@ -1,0 +1,6 @@
+*.pyc
+/app/config.py
+node_modules
+/app/storage
+__pycache__
+docker/db/data
