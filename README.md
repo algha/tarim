@@ -6,7 +6,9 @@ but, what means Tarim and Uyghur?
 Tarim is name of basin located of center of the Uyghurland.
 
 than what is Uyghur?   
-Uyghur it is my nation and country name. the country occupied before 70 years ago by China.  
+Uyghur it is my nation and country name. the country occupied before 70 years ago by China. 
+
+![ScreenShot](https://raw.github.com/algha/tarim/master/screens/login.png)   
 
 ### Features:
  - admin
