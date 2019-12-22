@@ -1,11 +1,11 @@
 ## Welcome to Tarim!
 
-Hi! Tarim is free open source flask admin page. but it is more than admin page.  currently, it is completed only admin page. so I call it as admin page temporary.
+Hi! Tarim is free open source flask admin page. but it is more than admin page.  currently, it is completed only admin page. so I call it as admin page temporary.  
 
-but, what means Tarim and Uyghur?
+but, what means Tarim and Uyghur?  
 Tarim is name of basin located of center of the Uyghurland.
 
-than what is Uyghur? 
+than what is Uyghur?   
 Uyghur it is my nation and country name. the country occupied before 70 years ago by China.
 
 ### Features:
