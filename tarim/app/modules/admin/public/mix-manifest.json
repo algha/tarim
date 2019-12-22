@@ -1,6 +1,6 @@
 {
-    "/js/auth.js": "/js/auth.js",
-    "/css/auth.css": "/css/auth.css",
-    "/css/dashboard.css": "/css/dashboard.css",
-    "/js/dashboard.js": "/js/dashboard.js"
+    "/js/auth.js": "/js/auth.js?id=836d874b12a85f98b9fb",
+    "/css/auth.css": "/css/auth.css?id=ff8357fe68e437aefbf9",
+    "/css/dashboard.css": "/css/dashboard.css?id=078fe3d38a21f4461556",
+    "/js/dashboard.js": "/js/dashboard.js?id=8529886efcc3e563bc9e"
 }
