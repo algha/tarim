@@ -6,7 +6,7 @@ but, what means Tarim and Uyghur?
 Tarim is name of basin located of center of the Uyghurland.
 
 than what is Uyghur?   
-Uyghur it is my nation and country name. the country occupied before 70 years ago by China.
+Uyghur it is my nation and country name. the country occupied before 70 years ago by China.  
 
 ### Features:
  - admin
@@ -33,25 +33,25 @@ the repository include all tarim source code, docker files and sql file.
 
 ### with docker
 
-Tarim is dockerized. so you should have installed Docker on your local machine.
- clone the repository, and run:
+Tarim is dockerized. so you should have installed Docker on your local machine.  
+ clone the repository, and run:  
 
     docker-compose up --build
    
-it will create all tarim needed. 
-after successfully build, to access the system, open the link the url: [http://localhost:5000/dashboard/login](http://localhost:5000/dashboard/login)
-login information:
-email: tarim@test.com
-password: tarim
-
-to access the database,  open the link the url: [http://localhost:8000](http://localhost:8000)
-database information is written on the docker file.
+it will create all tarim needed.   
+after successfully build, to access the system, open the link the url: [http://localhost:5000/dashboard/login](http://localhost:5000/dashboard/login)  
+login information:  
+email: tarim@test.com  
+password: tarim  
+  
+to access the database,  open the link the url: [http://localhost:8000](http://localhost:8000)  
+database information is written on the docker file.  
 
 
 ### Without docker
-first of all, create a database.
-the database is provided at folder: **tarim/docker/db/sql/**
- and use python environment.
- reference this official tutorial: [https://flask.palletsprojects.com/en/1.1.x/installation/](https://flask.palletsprojects.com/en/1.1.x/installation/)
+first of all, create a database.  
+the database is provided at folder: **tarim/docker/db/sql/**  
+ and use python environment.  
+ reference this official tutorial: [https://flask.palletsprojects.com/en/1.1.x/installation/](https://flask.palletsprojects.com/en/1.1.x/installation/)  
  
  
