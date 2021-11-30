@@ -24,7 +24,7 @@
     "filepond": "^4.9.2",
     "filepond-plugin-image-preview": "^4.5.0",
     "flatpickr": "^4.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "laravel-mix": "^5.0.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.13.0",
