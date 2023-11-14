@@ -5,7 +5,7 @@ cffi==1.12.3
 cleo==0.6.8
 Click==7.0
 Faker==0.8.18
-Flask==1.1.1
+Flask==2.2.5
 Flask-Bcrypt==0.7.1
 Flask-Login==0.4.1
 flask-orator==0.2.0
