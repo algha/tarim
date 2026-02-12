@@ -23,7 +23,7 @@
     "filepond-plugin-image-preview": "^4.4.0",
     "laravel-mix": "^5.0.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^7.0.0"
+    "node-sass": "^9.0.0"
   },
   "devDependencies": {
     "@vizuaalog/bulmajs": "^0.10.0",
